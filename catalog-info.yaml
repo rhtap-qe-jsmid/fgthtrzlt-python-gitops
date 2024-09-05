@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fgthtrzlt-python-gitops
+  description: This is GitOps manifest for fgthtrzlt-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fgthtrzlt-python
+    janus-idp.io/tekton: fgthtrzlt-python
+    backstage.io/kubernetes-id: fgthtrzlt-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fgthtrzlt-python
